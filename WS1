@@ -1,0 +1,3 @@
+alert("Hello world!"); 
+alert("Another hello world");  
+alert("Still one more hello world"); 

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Työpaja 2: JavaScript BOM & DOM</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h2 {
+      color: blue;
+    }
+
+    code {
+      font-size: larger;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Työpaja 2: JavaScript BOM & DOM</h1>
+
+  <p>Tässä harjoituksessa harjoitellaan BOM:n ja DOM:n käyttöä.</p>
+
+  <h2>Harjoitus 1</h2>
+  <p>Tekstin kirjoittaminen sivulle JavaScriptillä.</p>
+
+  <h2>Harjoitus 2</h2>
+  <p>Toistuvan tekstin tulostaminen.</p>
+
+  <h2>Harjoitus 3</h2>
+  <p>Selaimen tunnistus ja uudelleenohjaus.</p>
+
+  <h2>Harjoitus 4</h2>
+  <p>Käyttäjän vahvistaminen (confirm + prompt).</p>
+
+  <h2>Harjoitus 5</h2>
+  <p>Kuvan näyttäminen taulukosta.</p>
+
+  <!-- Kaikki harjoitukset yhdessä scriptissä -->
+  <script>
+    
+    document.write('<blockquote><strong><i>"If I had nine hours to chop down a tree, I\'d spend the first six sharpening my ax."</i></strong><br><br><em>– Abraham Lincoln</em></blockquote>');
+
+
+    function repeatingText() {
+      let lkm = prompt("Kuinka monta kertaa tulostetaan teksti?");
+      for (let i = 0; i < lkm; i++) {
+        document.write("<p>Hello world!</p>");
+      }
+    }
+
+    
+
+    /*
+    if (navigator.userAgent.includes("Firefox")) {
+      alert("You are using Firefox, redirecting you...");
+      window.location.href = "http://www.mozilla.org";
+    } else {
+      window.location.href = "https://www.google.com";
+    }
+    */
+
+    function kysyKayttaja() {
+      let onkoOpiskelija = confirm("Oletko opiskelija?");
+      if (onkoOpiskelija) {
+        let nimi = prompt("Mikä on nimesi?");
+        document.write("<strong>Tervetuloa, " + nimi + "!</strong>");
+      } else {
+        document.write("<strong>Valitettavasti tämä sivu on tarkoitettu vain opiskelijoille.</strong>");
+      }
+    }
+
+    // Testaa funktiota kutsumalla:
+    // kysyKayttaja()
+
+    const images = [
+      "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+      "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+      "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg"
+    ];
+
+    function naytaSatunnainenKuva() {
+      let index = Math.floor(Math.random() * images.length);
+      document.write('<img src="' + images[index] + '" alt="Satunnainen kuva">');
+    }
+
+    // Testaa funktiota kutsumalla:
+    // naytaSatunnainenKuva();
+  </script>
+</body>
+
+</html>
